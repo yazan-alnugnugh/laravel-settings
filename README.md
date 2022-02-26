@@ -35,3 +35,38 @@ The Laravel Settings created to allow you to add general settings to your websit
 
 ## Quick Example
 
+
+
+### General Setting
+
+we will call the ```set``` method from ```Setting``` class and set key and value simply
+```php
+
+$setting =  \Setting::set('age', 18);
+
+```
+
+Here we retrieve data from ```Setting```
+
+```php
+
+$setting =  \Setting::get('age');
+
+```
+
+### Model Setting
+
+we can set setting for specific item of Model  as below
+
+```php
+$user = User::find(1);
+$user->setSetting('age', 18);
+```
+
+Here we retrieve Setting from model 
+
+```php
+
+$user->getSetting('age');
+
+```
