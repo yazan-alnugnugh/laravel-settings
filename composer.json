@@ -1,6 +1,17 @@
 {
     "name": "yazan/laravel-settings",
     "description": "Laravel Settings to create your website and model settings in an easy way",
+    "keywords": [
+        "laravel",
+        "laravel-settings",
+        "settings",
+        "setting",
+        "php",
+        "model-settings",
+        "packages",
+        "laravel-settings package",
+        "eloquent"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
