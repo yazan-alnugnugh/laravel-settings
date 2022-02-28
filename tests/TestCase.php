@@ -18,13 +18,8 @@ abstract class TestCase extends OrchestraTestCase
 
         $this->createTables();
 
-        $this->withFactories(realpath('/factories'));
     }
 
-//    protected function getEnvironmentSetUp($app)
-//    {
-//        $app['config']->set('translatable.locales', ['el', 'en', 'fr', 'de', 'id', 'en-GB', 'en-US', 'de-DE', 'de-CH']);
-//    }
 
     protected function getPackageProviders($app)
     {
@@ -35,15 +30,15 @@ abstract class TestCase extends OrchestraTestCase
 
     protected function createTables(): void
     {
-//        Schema::create('settings', function (Blueprint $table) {
-//            $table->bigIncrements('id');
-//            $table->string('key');
-//            $table->string('value')->nullable();
-//            $table->string('group');
-//            $table->string('model_type')->nullable();
-//            $table->bigInteger('model_id')->nullable();
-//            $table->timestamps();
-//        });
+        Schema::create('settings', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('key');
+            $table->string('value')->nullable();
+            $table->string('group');
+            $table->string('model_type')->nullable();
+            $table->bigInteger('model_id')->nullable();
+            $table->timestamps();
+        });
 
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');

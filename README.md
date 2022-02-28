@@ -1,5 +1,3 @@
-![npm](https://img.shields.io/npm/dm/@yazan.alnughnugh/laravel-settings)
-![GitHub](https://img.shields.io/github/license/yazan-alnugnugh/laravel-datatable?color=blue)
 <h2 align="center">Supporting Laravel Settings Package</h2>
 
 - [Become sponsor on Patreon](https://www.patreon.com/yazan_alnughnugh).
@@ -12,7 +10,7 @@
     <img src="art/Laravel-setting.png" alt="laravel-vue-datatable intro image">
 </p>
 
-**do would like to add settings to your website or to your model this package created for that.**
+**do you would like to add settings to your website or to your model this package created for that.**
 
 The Laravel Settings created to allow you to add general settings to your website
  simple and easy way also you can add settings for the specific model item,
@@ -23,14 +21,6 @@ The Laravel Settings created to allow you to add general settings to your websit
 
  Documentation for Laravel Settings can be found here  [here](https://packages.tourismcaravan.com/docs/3/laravel-settings)
  
-
-
-## Demo
-
- [DataTable Demo](https://packages.tourismcaravan.com/data-table)
-
-
-
 
 
 ## Quick Example
@@ -70,3 +60,22 @@ Here we retrieve Setting from model
 $user->getSetting('age');
 
 ```
+
+also, we can retrieve Setting as a group 
+```php
+
+$user->getSettingGroup('default');
+
+```
+
+### Tests
+
+to start the Test Laravel settings package we can use the composer command.
+
+```push
+
+composer test
+
+```
+
+

@@ -10,7 +10,7 @@ class Setting extends Model implements SettingInterface
 {
     use Scope;
 
-    public static function get($key, string $group = 'default')
+    public static function get($key,  $group = 'default')
     {
                 $setting =  (new self)->relationNull()->where('key', $key)->
                 where('group', $group)->pluck('value');
@@ -18,7 +18,7 @@ class Setting extends Model implements SettingInterface
 
     }
 
-    public static function set($key, $value, string $group = 'default')
+    public static function set($key, $value,  $group = 'default')
     {
 
         $setting = (new self)->updateOrCreate(
@@ -29,7 +29,7 @@ class Setting extends Model implements SettingInterface
         return $setting;
     }
 
-    public static function clear($key, string $group = 'default')
+    public static function clear($key,  $group = 'default')
     {
         $setting =   (new self)->relationNull()
             ->where('key', $key,)
@@ -40,28 +40,28 @@ class Setting extends Model implements SettingInterface
 
     }
 
-    public static function clean($key,string $group = 'default')
+    public static function clean($key, $group = 'default')
     {
         return $setting = (new self)->relationNull()
             ->where('key', $key,)
             ->where('group', $group,)
-            ->update(['value' => '']);
+            ->update(['value' => null]);
 
     }
 
-    public static function clearGroup(string $group = 'default')
+    public static function clearGroup( $group = 'default')
     {
         return (new self)->relationNull()->where('group', $group,)->delete();
 
     }
 
-    public static function cleanGroup(string $group = 'default')
+    public static function cleanGroup( $group = 'default')
     {
         return (new self)->relationNull()->where('group', $group,)->update(['value' => '']);
 
     }
 
-    public static function group(string $group = 'default')
+    public static function group( $group = 'default')
     {
         $group = (new self)->relationNull()->where('group', $group,)->get(['key', 'value'])->toArray();
 

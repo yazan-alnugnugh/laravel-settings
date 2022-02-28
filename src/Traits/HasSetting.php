@@ -40,7 +40,7 @@ trait HasSetting
         return $this->setting()
             ->where('key', $key)
             ->where('group', $group)
-            ->update(['value' => '']);
+            ->update(['value' => null]);
     }
     public function clearSettingGroup($group = 'default'){
         return $this->setting()

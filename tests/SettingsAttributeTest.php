@@ -8,7 +8,7 @@ namespace Yazan\Setting\Tests;
 use Yazan\Setting\Models\User;
 use Yazan\Setting\Setting;
 
-class SettingsAttributeTestTest extends TestCase
+class SettingsAttributeTest extends TestCase
 {
     public $settings = [
         'default' => [

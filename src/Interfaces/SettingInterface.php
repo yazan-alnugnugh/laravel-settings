@@ -6,11 +6,12 @@ namespace Yazan\Setting\Interfaces;
 
 interface SettingInterface
 {
-    public static function get($key, string $group = 'default');
-    public static function set($key, $value, string $group = 'default');
-    public static function clear($key, string $group = 'default');
-    public static function clean($key, string $group = 'default');
-    public static function clearGroup(string $group = 'default');
-    public static function cleanGroup(string $group = 'default');
-    public static function group(string $group = 'default');
+    public static function get($key, $group);
+    public static function set($key, $value, $group);
+    public static function clear($key, $group);
+    public static function clean($key, $group);
+    public static function clearGroup($group);
+    public static function cleanGroup($group);
+    public static function group($group);
+    public static function groups();
 }
