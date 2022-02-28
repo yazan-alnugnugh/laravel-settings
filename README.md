@@ -41,6 +41,7 @@ Here we retrieve data from ```Setting```
 ```php
 
 $setting =  \Setting::get('age');
+// 18
 
 ```
 
@@ -58,14 +59,14 @@ Here we retrieve Setting from model
 ```php
 
 $user->getSetting('age');
-
+// 18
 ```
 
 also, we can retrieve Setting as a group 
 ```php
 
 $user->getSettingGroup('default');
-
+//['age' => 18]
 ```
 
 ### Tests
@@ -73,9 +74,7 @@ $user->getSettingGroup('default');
 to start the Test Laravel settings package we can use the composer command.
 
 ```push
-
 composer test
-
 ```
 
 

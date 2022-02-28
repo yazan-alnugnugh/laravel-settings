@@ -1,6 +1,6 @@
 {
     "name": "yazan/laravel-settings",
-    "description": "Laravel Settings to create your setting in easy way",
+    "description": "Laravel Settings to create your website and model settings in an easy way",
     "type": "library",
     "license": "MIT",
     "authors": [
