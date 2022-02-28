@@ -19,7 +19,7 @@ The Laravel Settings created to allow you to add general settings to your websit
 
 ## Official Documentation
 
- Documentation for Laravel Settings can be found here  [here](https://packages.tourismcaravan.com/docs/3/laravel-settings)
+ Documentation for Laravel Settings can be found  [here](https://packages.tourismcaravan.com/docs/1/laravel-settings)
  
 
 
