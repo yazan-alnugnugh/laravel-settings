@@ -10,10 +10,10 @@
     <img src="art/Laravel-setting.png" alt="laravel-vue-datatable intro image">
 </p>
 
-**do you would like to add settings to your website or to your model this package created for that.**
+**Do you like to add settings to your website or to your model? this package created for that.**
 
-The Laravel Settings created to allow you to add general settings to your website
- simple and easy way also you can add settings for the specific model item,
+The Laravel Settings created to allow you to add general settings to your website in simple and easy way,
+ you can add settings for a specific model item as well,
   Let's start using it in simple steps.
 
 
