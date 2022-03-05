@@ -26,7 +26,14 @@ The Laravel Settings created to allow you to add general settings to your websit
 
  Documentation for Laravel Settings can be found  [here](https://packages.tourismcaravan.com/docs/1/laravel-settings)
  
+ 
+## Installation
 
+install via composer 
+
+```push
+composer require yazan/laravel-settings
+```
 
 ## Quick Example
 
