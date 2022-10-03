@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Yazan\Setting\Interfaces;
-
 
 interface SettingInterface
 {

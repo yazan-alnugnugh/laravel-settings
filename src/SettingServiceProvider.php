@@ -4,7 +4,6 @@ namespace Yazan\Setting;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
-use Yazan\DataTable\Commands\DataTableCommand;
 
 class SettingServiceProvider extends ServiceProvider
 {
@@ -15,11 +14,10 @@ class SettingServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->booting(function() {
+        $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
             $loader->alias('Setting', Setting::class);
         });
-
     }
 
     /**
@@ -36,6 +34,5 @@ class SettingServiceProvider extends ServiceProvider
         $this->publishes([
                              __DIR__.'/Databases/migrations' => database_path('migrations')
                          ], 'settings');
-
     }
 }

@@ -1,12 +1,8 @@
 <?php
 
-
 namespace Yazan\Setting\Tests;
 
-
-
 use Yazan\Setting\Models\User;
-use Yazan\Setting\Setting;
 
 class SettingsAttributeTest extends TestCase
 {
@@ -30,7 +26,6 @@ class SettingsAttributeTest extends TestCase
 
 
         static::assertEquals($this->settings, $settingsAttribute);
-
     }
 
 
@@ -42,5 +37,4 @@ class SettingsAttributeTest extends TestCase
         $user->save();
         return $user;
     }
-
 }

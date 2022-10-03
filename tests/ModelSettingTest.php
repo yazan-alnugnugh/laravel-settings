@@ -1,12 +1,8 @@
 <?php
 
-
 namespace Yazan\Setting\Tests;
 
-
-
 use Yazan\Setting\Models\User;
-use Yazan\Setting\Setting;
 
 class ModelSettingTest extends TestCase
 {
@@ -26,44 +22,37 @@ class ModelSettingTest extends TestCase
         $setting =  $user->setSetting('age', 18);
 
         static::assertEquals(18, $setting->value);
-
     }
 
     /** @test */
     public function it_can_get_key_value()
     {
-
         $user = $this->createUser();
         $setting =  $user->setSetting('age', 18);
 
 
         static::assertEquals(18, $user->getSetting('age'));
-
     }
 
     /** @test */
     public function it_can_clear_key_value()
     {
-
         $user = $this->createUser();
         $setting =  $user->setSetting('age', 18);
         $deletedSetting =  $user->clearSetting('age');
 
 
         static::assertTrue(true, $deletedSetting);
-
     }
     /** @test */
     public function it_can_clean_key_value()
     {
-
         $user = $this->createUser();
         $setting =  $user->setSetting('age', 18);
         $isCleanSetting =  $user->cleanSetting('age');
 
 
         static::assertEquals(1, $isCleanSetting);
-
     }
 
     /** @test */
@@ -74,8 +63,6 @@ class ModelSettingTest extends TestCase
         $settingGroup =  $user->settingGroup('default');
 
         static::assertEquals(['age' => 18], $settingGroup);
-
-
     }
     /** @test */
     public function it_can_get_groups()
@@ -88,13 +75,11 @@ class ModelSettingTest extends TestCase
 
 
         static::assertEquals($this->settings, $settingGroups);
-
     }
 
     /** @test */
     public function it_can_clearGroup()
     {
-
         $user = $this->createUser();
         $setting =  $user->setSetting('role', 'super-admin', 'admins');
         $isClearGroup = $user->clearSettingGroup('admins');
@@ -109,8 +94,6 @@ class ModelSettingTest extends TestCase
         $isClearGroup = $user->clearSettingGroup('admins');
 
         static::assertTrue(true, $isClearGroup);
-
-
     }
 
     public function createUser()
@@ -120,5 +103,4 @@ class ModelSettingTest extends TestCase
         $user->save();
         return $user;
     }
-
 }
