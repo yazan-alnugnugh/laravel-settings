@@ -10,5 +10,6 @@ class User extends Model
 {
     use HasFactory;
     use HasSetting;
+
     protected $guarded = [];
 }

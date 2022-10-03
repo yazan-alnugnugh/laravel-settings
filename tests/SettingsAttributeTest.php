@@ -8,33 +8,30 @@ class SettingsAttributeTest extends TestCase
 {
     public $settings = [
         'default' => [
-            'age' => 18
+            'age' => 18,
         ],
         'admins' => [
-            'role' => 'super-admin'
-        ]
+            'role' => 'super-admin',
+        ],
     ];
-
 
     /** @test */
     public function it_can_get_settings_attribute()
     {
         $user = $this->createUser();
-        $setting =  $user->setSetting('age', 18);
-        $setting =  $user->setSetting('role', 'super-admin', 'admins');
-        $settingsAttribute =  $user->settings;
-
+        $setting = $user->setSetting('age', 18);
+        $setting = $user->setSetting('role', 'super-admin', 'admins');
+        $settingsAttribute = $user->settings;
 
         static::assertEquals($this->settings, $settingsAttribute);
     }
-
-
 
     public function createUser()
     {
         $user = new User();
         $user->name = 'Yazan';
         $user->save();
+
         return $user;
     }
 }

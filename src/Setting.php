@@ -2,8 +2,8 @@
 
 namespace Yazan\Setting;
 
-use Yazan\Setting\Models\Setting as Model;
 use Yazan\Setting\Interfaces\SettingInterface;
+use Yazan\Setting\Models\Setting as Model;
 use Yazan\Setting\Traits\Scope;
 
 class Setting extends Model implements SettingInterface
@@ -12,24 +12,23 @@ class Setting extends Model implements SettingInterface
 
     public static function get($key, $group = 'default')
     {
-        $setting =  (new self())->relationNull()->where('key', $key)->
-                where('group', $group)->pluck('value');
+        $setting = (new self())->relationNull()->where('key', $key)
+                ->where('group', $group)->pluck('value');
+
         return optional($setting)[0];
     }
 
     public static function set($key, $value, $group = 'default')
     {
-        $setting = (new self())->updateOrCreate(
+        return (new self())->updateOrCreate(
             ['key' => $key, 'model_type' => null, 'model_id' => null, 'group' => $group],
             ['value' => $value]
         );
-
-        return $setting;
     }
 
     public static function clear($key, $group = 'default')
     {
-        $setting =   (new self())->relationNull()
+        $setting = (new self())->relationNull()
             ->where('key', $key, )
             ->where('group', $group, )
             ->first();
@@ -59,11 +58,7 @@ class Setting extends Model implements SettingInterface
     {
         $group = (new self())->relationNull()->where('group', $group, )->get(['key', 'value'])->toArray();
 
-        $collectGroup = collect($group)->mapWithKeys(function ($item) {
-            return [$item['key'] => $item['value']];
-        })->all();
-
-        return $collectGroup;
+        return collect($group)->mapWithKeys(fn ($item) => [$item['key'] => $item['value']])->all();
     }
 
     public static function groups()
@@ -71,15 +66,13 @@ class Setting extends Model implements SettingInterface
         $settings = (new self())->relationNull()->get(['key', 'value', 'group'])->toArray();
         $groups = [];
 
-        foreach ($settings as $item):
-
-            if (!isset($groups[$item['group']])) {
+        foreach ($settings as $item) {
+            if (! isset($groups[$item['group']])) {
                 $groups[$item['group']] = [];
             }
 
-        $groups[$item['group']][$item['key']] = $item['value'];
-
-        endforeach;
+            $groups[$item['group']][$item['key']] = $item['value'];
+        }
 
         return $groups;
     }

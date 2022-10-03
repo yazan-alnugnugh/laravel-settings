@@ -15,15 +15,15 @@ trait HasSetting
 
         return $setting ? $setting->value : null;
     }
+
     public function setSetting($key, $value = null, $group = 'default')
     {
-        $setting = $this->setting()->updateOrCreate(
+        return $this->setting()->updateOrCreate(
             ['key' => $key, 'model_type' => self::class, 'model_id' => $this->id, 'group' => $group],
             ['value' => $value]
         );
-
-        return $setting;
     }
+
     public function clearSetting($key, $group = null)
     {
         return $this->setting()
@@ -31,6 +31,7 @@ trait HasSetting
             ->where('group', $group)
             ->delete();
     }
+
     public function cleanSetting($key, $group = 'default')
     {
         return $this->setting()
@@ -38,27 +39,26 @@ trait HasSetting
             ->where('group', $group)
             ->update(['value' => null]);
     }
+
     public function clearSettingGroup($group = 'default')
     {
         return $this->setting()
             ->where('group', $group)
             ->delete();
     }
+
     public function cleanSettingGroup($group = 'default')
     {
         return $this->setting()
             ->where('group', $group)
             ->update(['value' => '']);
     }
+
     public function settingGroup($group = 'default')
     {
         $group = $this->setting()->where('group', $group, )->get(['key', 'value'])->toArray();
 
-        $collectGroup = collect($group)->mapWithKeys(function ($item) {
-            return [$item['key'] => $item['value']];
-        })->all();
-
-        return $collectGroup;
+        return collect($group)->mapWithKeys(fn ($item) => [$item['key'] => $item['value']])->all();
     }
 
     public function settingGroups()
@@ -66,15 +66,13 @@ trait HasSetting
         $settings = $this->setting()->get(['group', 'key', 'value'])->toArray();
         $groups = [];
 
-        foreach ($settings as $item):
-
-            if (!isset($groups[$item['group']])) {
+        foreach ($settings as $item) {
+            if (! isset($groups[$item['group']])) {
                 $groups[$item['group']] = [];
             }
 
-        $groups[$item['group']][$item['key']] = $item['value'];
-
-        endforeach;
+            $groups[$item['group']][$item['key']] = $item['value'];
+        }
 
         return $groups;
     }

@@ -2,8 +2,8 @@
 
 namespace Yazan\Setting;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\ServiceProvider;
 
 class SettingServiceProvider extends ServiceProvider
 {
@@ -32,7 +32,7 @@ class SettingServiceProvider extends ServiceProvider
 //        $this->loadMigrationsFrom(__DIR__ . '/Databases/migrations');
 
         $this->publishes([
-                             __DIR__.'/Databases/migrations' => database_path('migrations')
-                         ], 'settings');
+            __DIR__.'/Databases/migrations' => database_path('migrations'),
+        ], 'settings');
     }
 }

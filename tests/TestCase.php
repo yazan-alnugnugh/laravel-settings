@@ -19,7 +19,6 @@ abstract class TestCase extends OrchestraTestCase
         $this->createTables();
     }
 
-
     protected function getPackageProviders($app)
     {
         return [
