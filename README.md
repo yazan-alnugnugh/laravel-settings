@@ -1,6 +1,5 @@
 ![GitHub](https://img.shields.io/github/license/yazan-alnugnugh/laravel-settings?color=blue)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/yazan/laravel-settings.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-settings)
-
 [![Laravel](https://github.com/yazan-alnugnugh/laravel-settings/actions/workflows/laravel.yml/badge.svg)](https://github.com/yazan-alnugnugh/laravel-settings/actions/workflows/laravel.yml)
 
 <h2 align="center">Supporting Laravel Settings Package</h2>
