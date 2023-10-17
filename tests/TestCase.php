@@ -17,9 +17,7 @@ abstract class TestCase extends OrchestraTestCase
         parent::setUp();
 
         $this->createTables();
-
     }
-
 
     protected function getPackageProviders($app)
     {
@@ -47,7 +45,5 @@ abstract class TestCase extends OrchestraTestCase
             $table->string('number')->nullable();
             $table->timestamps();
         });
-
-
     }
 }

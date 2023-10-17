@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Yazan\Setting\Traits;
-
 
 trait Scope
 {
